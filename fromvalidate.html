@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<title> Registration Form Tutorial</title>
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/structure.css" type="text/css" />
+<link rel="stylesheet" href="css/form.css" type="text/css" />
+
+<!-- JavaScript -->
+ <script type="text/javascript">
+var c_name = /^[A-Za-z0-9 ]{3,20}$/;
+var c_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i 
+var c_username = /^[A-Za-z0-9_]{1,20}$/;
+var c_password =  /^[A-Za-z0-9!@#$%^&*()_]{6,20}$/;
+
+
+function validate(form){
+var name = form.name.value;
+ var email = form.email.value;
+ var username = form.username.value;
+ var password = form.password.value;
+ var gender = form.gender.value; 
+    var rpwd=form.rpassword.value;
+    
+ var errors = [];
+ 
+ if (!c_name.test(name)) {
+  errors[errors.length] = "You valid Name .";
+ }
+  
+ if (!c_email.test(email)) {
+  errors[errors.length] = "You must enter a valid email address.";
+ }
+    
+ if (!c_username.test(username)) {
+  errors[errors.length] = "You valid UserName no special char .";
+ }
+
+ if ((c_password.test(password)) && (ck_password.test(rpwd))) {
+    if(password != rpwd)
+      errors[errors.length] = "password mismatch.";
+ }
+    else
+        errors[errors.length] = "You must enter a valid Password min 6 char.";
+    
+
+    if (gender==0) {
+  errors[errors.length] = "Select Gender";
+ }
+ 
+ 
+ if (errors.length > 0) {
+  reportErrors(errors);
+  return false;
+ }
+ return true;
+}
+
+function reportErrors(errors){
+ var msg = "Please Enter Valide Data...\n";
+ for (var i = 0; i<errors.length; i++) {
+  var numError = i + 1;
+  msg += "\n" + numError + ". " + errors[i];
+ }
+ alert(msg);
+}
+</script>
+
+</head>
+
+<body id="public">
+	<div style="height:30px"></div>
+
+<div id="container">
+
+<div style="height:30px"></div>
+
+<form onSubmit="return validate(this);" name="form1">
+
+<div class="info" style="padding-left:20px">
+	<h2>Registration Form</h2>
+	
+</div>
+
+<label class="desc" id="title1" for="Field1">
+		Full Name			</label>
+	<div>
+		<input id="name" 			name="name" 			type="text" 			class="field text medium" 			value="" 			maxlength="255" 			tabindex="1" 						/>
+		</div>
+	
+	<label class="desc" id="title2" for="Field2">
+		Email			</label>
+	<div>
+		<input id="email" 			name="email" 			type="text" 			class="field text medium" 			value="" 			maxlength="255" 			tabindex="2" 						/>
+		</div>
+	
+	<label class="desc" id="title3" for="Field3">
+		User-ID			</label>
+	<div>
+		<input id="username" 			name="username" 			type="text" 			class="field text medium" 			value="" 			maxlength="255" 			tabindex="3" 						/>
+		</div>
+	
+
+
+	<label class="desc" id="title4" for="Field4">
+		Password			</label>
+	<div>
+		<input id="password" 			name="password" 			type="password" 			class="field text medium" 			value="" 			maxlength="255" 			tabindex="4" 						/>
+		</div>
+	
+    
+
+	<label class="desc" id="title4" for="Field4">
+		Retype Password			</label>
+	<div>
+		<input id="rpassword" 			name="rpassword" 			type="password" 			class="field text medium" 			value="" 			maxlength="255" 			tabindex="4" 						/>
+		</div>
+	
+
+	<label class="desc" id="title6" for="Field6">
+		Gender			</label>
+	<div>
+		<select id="gender" 			name="gender" 			class="field select medium" 			tabindex="5"> 
+						<option value="0">Gender</option><option value="1">Male</option><option value="2">Female</option>
+		  </select>
+	</div>
+
+
+
+
+
+
+
+				<input  type="submit" value="Submit" style=" background:#0060a1; color:#FFFFFF; font-size:14px; border:1px solid #0060a1"/>
+	  
+
+	
+
+</form>
+<div style="height:20px"></div>
+</div><!--container-->
+</body>
+</html>

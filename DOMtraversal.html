@@ -1,0 +1,129 @@
+<html>
+    <head>
+    <titile> Credit card form</titile><br>
+    <br>
+    </head>
+    <br>
+    
+    <body style= "margin:10px;padding:10px;height=100%;" id="first">
+        <form>
+            <fieldset> 
+            <legend>  Credit Card Information</legend>
+            
+                Select Card Type :  <br>     
+              
+                <br>
+                <input type="radio" name="card type" Value="Visa" checked>  Visa                             
+                <input type="radio" name="card type" Value="Master" >Master
+                <input type="radio" name="card type" Value="American Express" >American Express<br>
+                <br>
+                Name On the Card 
+                <input type="text" name=" Name on the card"><br>
+                <br>
+                Card Number
+                <input type="number" name="card number"><br>
+                <br>
+                Expiration Date
+                <select>
+                <option value="Jan">Jan </option>
+                    <option value="Feb">Feb </option>                                   
+                    <option value="Mar">Mar </option>
+                     <option value="Apr">Apr </option>
+                    <option value="May">May </option>                               
+                    <option value="June">June </option>
+                    <option value="July">July </option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep </option>
+                    <option value="Oct">Oct </option>
+                    <option value="Nov">Nov </option>
+
+                     <option value="Dec">Dec</option>
+
+    
+                    
+               </select>
+                
+           /     
+                
+                <select>
+                <option value="2015">2015 </option>
+                    <option value="2016">2016 </option>                                   
+                    <option value="2017">2017 </option>
+                     <option value="2018">2018 </option>
+                    <option value="2019">2019</option>                               
+                    <option value="2020">2020 </option>
+                    <option value="2021">2021 </option>
+                    <option value="2023">2023</option>
+                </select> <br>
+                <br>
+                
+                Payment Amount
+                <input type="number" name="amount"><br>
+                
+        </fieldset><br>
+            
+            <br>
+            <br>
+            <fieldset>
+            
+            <legend> Credit Card Billing Address </legend><br>
+            <br>
+            Street Address1
+                <input type="text" name="address"><br>
+                <br>
+                Street Address 2
+                <input type="text" name="address"><br>
+                <br>
+                City
+                
+                <input type="text" name="city"><br>
+                <br>
+                
+                State
+                <select>
+                <option value="New Jersey"> New Jersey</option>
+                    <option value="New York">New York </option>                                   
+                    <option value="Ohio">Ohio</option>
+                     <option value="Washington DC">Washington DC </option>
+                    <option value="Connecticut">Connecticut </option>   
+                 
+                </select>  <br>
+                <br>
+                Zip Code
+                <input type="number" name="zip code"><br>
+                <br>
+                
+                <input type="button" value="Submit Payment">
+                <input type="submit" value="clear billing address">
+                
+                       
+                       
+                       
+                
+            </fieldset>
+            
+        
+        
+        </form>
+    </body>
+    <script type="text/javascript">
+    
+    function theDOMElement(node) {
+    if (node.nodeType == 1) {
+ 
+        console.log(node.tagName);
+ 
+        node = node.firstChild;
+ 
+        while (node) {
+            theDOMElement(node);
+            node = node.nextSibling;
+        }
+    }
+    
+}
+        var passelem = document.getElementById("first");
+        theDOMElement(passelem);
+        
+    </script>
+</html>
